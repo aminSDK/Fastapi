@@ -20,7 +20,7 @@ jobs:
 
       - name: Build and push Docker image
         env:
-          ACR_NAME: alexsystest  # Replace with your Azure Container Registry name
+          ACR_NAME: acrtestkub  # Replace with your Azure Container Registry name
         run: |
           docker build -t $ACR_NAME.azurecr.io/my_fastapi_app:v1 .
           docker login $ACR_NAME.azurecr.io -u $ACR_NAME -p ${{ secrets.ACR_PASSWORD }}
